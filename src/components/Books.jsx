@@ -3,64 +3,64 @@ import React from 'react';
 import book from '../img/Book.jpg';
 import star from '../img/Star.png';
 
-import { Route, Link, Routes, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Books = () => {
+const Books = (props) => {
+    let filteredBooks;
+    const {books, popular} = props;
+
+    let booksCopy = [...books];
+
+
+    debugger
+    
+
+    if(popular) {
+        filteredBooks = booksCopy.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
+    } else {
+        filteredBooks = booksCopy;
+    }
 
     return (
 
         <div className="booksPage">
 
-            <Link to="/books/1" className="booksPage__item">
+            {
+                filteredBooks.map(book => {
 
-                    <div className="booksPage__left">
-                        <img className='booksPage__bookImg' src={book} alt="" />
-                    </div>
+                    const {id, title, author, price, rating, rewievNumber} = book;
 
-                    <div className="booksPage__right">
+                    return (
+                        <Link to={`/books/${id}`} className="booksPage__item">
 
-                        <p className="booksPage__title">Гарри Потер и принц полукровка</p>
+                            <div className="booksPage__left">
+                                <img className='booksPage__bookImg' src={book.photo} alt="" />
+                            </div>
 
-                        <span className="bookPage__reviews">
-                            <img src={star} className="bookPage__reviews__star" />
-                            <p className="bookPage__reviews__num">4.7</p>
+                            <div className="booksPage__right">
 
-                            <p className="bookPage__reviews__reviewCounter">228 отзывов</p>
+                                <p className="booksPage__title">{title}</p>
 
-                            <p className="bookPage__reviews__price">800 ₽</p>
-                        </span>
+                                <span className="bookPage__reviews">
+                                    <img src={star} className="bookPage__reviews__star" />
+                                    <p className="bookPage__reviews__num">{rating}</p>
 
-                        <p className="booksPage__author">Джоан Роулинг</p>
+                                    <p className="bookPage__reviews__reviewCounter">{rewievNumber} отзывов</p>
 
-                    </div>
+                                    <p className="bookPage__reviews__price">{price} ₽</p>
+                                </span>
 
-            </Link>
+                                <p className="booksPage__author">{author.name}</p>
+
+                            </div>
+
+                        </Link>
+                    )
+                })
+            }
 
 
-            <Link to="/books/1" className="booksPage__item">
 
-                    <div className="booksPage__left">
-                        <img className='booksPage__bookImg' src={book} alt="" />
-                    </div>
-
-                    <div className="booksPage__right">
-
-                        <p className="booksPage__title">Гарри Потер и принц полукровка</p>
-
-                        <span className="bookPage__reviews">
-                            <img src={star} className="bookPage__reviews__star" />
-                            <p className="bookPage__reviews__num">4.7</p>
-
-                            <p className="bookPage__reviews__reviewCounter">228 отзывов</p>
-
-                            <p className="bookPage__reviews__price">800 ₽</p>
-                        </span>
-
-                        <p className="booksPage__author">Джоан Роулинг</p>
-
-                    </div>
-
-            </Link>
         </div>
     )
 }

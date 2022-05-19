@@ -5,55 +5,40 @@ import { Link }  from "react-router-dom";
 
 import author from '../img/Author.jpg';
 
-const Authors = () => {
+const Authors = (props) => {
+
+    const {authors} = props;
+
+    debugger
 
     return (
         <div className="authorsList">
 
-            <Link to="/authors/1" className="author__item">
+            {
+                authors.map(author => {
 
-                <div className="author__item__left">
-                    <img className='author__item__authorImg' src={author} alt="" />
-                </div>
+                    const {id, name, photo, bookNum} = author;
 
-                <div className="author__item__right">
+                    return(
+                        <Link to={`/authors/${id}`} className="author__item">
 
-                    <p className="author__item__name">Джоан Роулинг</p>
-                    <p class="bookPage__bookInfo__item"><span class="name">Страниц: </span> <span class="value">228</span></p>
+                        <div className="author__item__left">
+                            <img className='author__item__authorImg' src={photo} alt="" />
+                        </div>
+        
+                        <div className="author__item__right">
+        
+                            <p className="author__item__name">{name}</p>
+        
+        
+                            <p className="bookPage__bookInfo__bookCounter">{bookNum} книг в продаже</p>
+                        </div>
+                    </Link>
+                    )
 
-                    <p className="bookPage__bookInfo__bookCounter">288 книг</p>
-                </div>
-            </Link>
+                })
+            }
 
-            <Link to="/authors/1" className="author__item">
-
-                <div className="author__item__left">
-                    <img className='author__item__authorImg' src={author} alt="" />
-                </div>
-
-                <div className="author__item__right">
-
-                    <p className="author__item__name">Джоан Роулинг</p>
-                    <p class="bookPage__bookInfo__item"><span class="name">Страниц: </span> <span class="value">228</span></p>
-
-                    <p className="bookPage__bookInfo__bookCounter">288 книг</p>
-                </div>
-            </Link>
-
-            <Link to="/authors/1" className="author__item">
-
-                <div className="author__item__left">
-                    <img className='author__item__authorImg' src={author} alt="" />
-                </div>
-
-                <div className="author__item__right">
-
-                    <p className="author__item__name">Джоан Роулинг</p>
-                    <p class="bookPage__bookInfo__item"><span class="name">Страниц: </span> <span class="value">228</span></p>
-
-                    <p className="bookPage__bookInfo__bookCounter">288 книг</p>
-                </div>
-            </Link>
 
         </div>
     )

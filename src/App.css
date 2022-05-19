@@ -7,12 +7,13 @@
 }
 
 li {
-  list-style-type: none; /* Убираем маркеры */
- }
+  list-style-type: none;
+  /* Убираем маркеры */
+}
 
- a {
-   text-decoration: none;
- }
+a {
+  text-decoration: none;
+}
 
 body {
   background: #e5e5e5;
@@ -39,7 +40,7 @@ body {
   font-weight: 500;
 }
 
-.menu__item + .menu__item {
+.menu__item+.menu__item {
   margin-left: 16px;
 }
 
@@ -55,6 +56,7 @@ body {
 
 .bookPage__bookImg {
   border-radius: 8px;
+  width: calc(100% - 20px);
 }
 
 .bookPage {
@@ -103,16 +105,19 @@ body {
   color: #2B2B2B;
 }
 
-.bookPage__bookInfo__item + .bookPage__bookInfo__item {
+.bookPage__bookInfo__item+.bookPage__bookInfo__item {
   margin-top: 11px;
 }
 
 .bookPage__bookInfo {
   margin-top: 31px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .bookPage__right {
-  position: relative
+  position: relative;
+  width: 100%;
 }
 
 .bookPage__infoFooter {
@@ -141,7 +146,7 @@ body {
   filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
 }
 
-.booksPage__item + .booksPage__item {
+.booksPage__item+.booksPage__item {
   margin-top: 25px;
 }
 
@@ -151,6 +156,7 @@ body {
 
 .booksPage__bookImg {
   width: 100%;
+  border-radius: 8px;
 }
 
 .booksPage {
@@ -199,11 +205,13 @@ body {
 }
 
 .author__item__authorImg {
-   width: 100%;
+  width: 100%;
+  border-radius: 4px;
 }
 
 .author__item__right {
   margin-left: 25px;
+  width: 100%;
 }
 
 .author__item__name {
@@ -214,6 +222,7 @@ body {
 
 .bookPage__bookInfo__item {
   margin-top: 11px;
+  width: 33%;
 }
 
 .bookPage__bookInfo__bookCounter {
@@ -222,7 +231,7 @@ body {
   font-weight: 16;
 }
 
-.author__item + .author__item {
+.author__item+.author__item {
   margin-top: 15px;
 }
 
@@ -234,7 +243,7 @@ body {
 }
 
 .author__left__img {
-   width: 100%;
+  width: 100%;
 }
 
 .author__left {
@@ -251,6 +260,7 @@ body {
 
 .author__right {
   margin-left: 26px;
+  width: 100%;
 }
 
 .bookPage__books__title {
@@ -260,11 +270,13 @@ body {
 
 .bookPage__books__list__item {
   margin-top: 12px;
-  width: 16.6%
+  width: 16.6%;
+  cursor: pointer;
 }
 
 .bookPage__books__list__item__photo {
   width: 100%;
+  border-radius: 4px
 }
 
 .bookPage__books__list {
@@ -272,6 +284,15 @@ body {
   flex-wrap: wrap;
 }
 
-.bookPage__books__list__item + .bookPage__books__list__item {
+.bookPage__books__list__item+.bookPage__books__list__item {
   margin-left: 28px;
+}
+
+.author__left img {
+  border-radius: 4px;
+}
+
+.bookPage__bookInfo__item span,
+.bookPage__bookInfo__item a {
+  display: inline-block;
 }

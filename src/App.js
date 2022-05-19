@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-import {Route, Link, Routes, useParams}  from "react-router-dom";
+import {Route, Link, Routes}  from "react-router-dom";
 
 import BookPage from './components/BookPage';
 import Books from './components/Books';
@@ -10,7 +10,10 @@ import Author from './components/Author';
 
 
 
-function App() {
+function App(props) {
+
+  const {store} = props;
+
   return (
     <div className="App">
 
@@ -28,13 +31,13 @@ function App() {
       <div className="container">
 
       <Routes>
-          <Route path="/" element={<Books />} />
-          <Route path="/books" element={<Books />} />
-          <Route path="/books/:bookId" element={<BookPage />} />
-          <Route path="/authors" element={<Authors />} />
-          <Route path="/authors/:authorId" element={<Author />} />
-          <Route path="/janres" element={<Books />} />
-          <Route path="/popular" element={<Books />} />
+          <Route path="/" element={<Books books={store.books} />} />
+          <Route path="/books" element={<Books books={store.books} />} />
+          <Route path="/books/:bookId" element={<BookPage books={store.books} />} />
+          <Route path="/authors" element={<Authors  authors={store.authors} books={store.books} />} />
+          <Route path="/authors/:authorId" element={<Author authors={store.authors} books={store.books} />} />
+          <Route path="/janres" element={<Books  books={store.books} />} />
+          <Route path="/popular" element={<Books popular books={store.books} />} />
 
         </Routes>
 
