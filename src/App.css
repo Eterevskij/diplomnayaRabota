@@ -1,38 +1,277 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li {
+  list-style-type: none; /* Убираем маркеры */
+ }
+
+ a {
+   text-decoration: none;
+ }
+
+body {
+  background: #e5e5e5;
+  font-family: 'inter';
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+  background: #003580;
+  padding: 13px 0px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  max-width: 942px;
+  margin: 0 auto;
+}
+
+.menu__item {
+  display: inline-block;
+}
+
+.menu__item a {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.menu__item + .menu__item {
+  margin-left: 16px;
+}
+
+.content {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 25px;
+}
+
+.content {
+  margin-top: 36px;
+}
+
+.bookPage__bookImg {
+  border-radius: 8px;
+}
+
+.bookPage {
   display: flex;
-  flex-direction: column;
+}
+
+.bookPage__left {
+  width: 290px;
+}
+
+.bookPage__title {
+  color: #2b2b2b;
+  font-weight: 600;
+  font-size: 32px;
+}
+
+.bookPage__reviews__num {
+  color: #000;
+  margin-left: 8px;
+  font: 600px;
+  font-size: 16px;
+}
+
+.bookPage__reviews {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.bookPage__reviews__reviewCounter {
+  font-size: 16px;
+  margin-left: 28px;
+  color: #666;
+  font-weight: 400;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bookPage__reviews {
+  margin-top: 11px;
+}
+
+.bookPage__bookInfo__item {
+  font-size: 16px;
+}
+
+.bookPage__bookInfo__item .value {
+  font-weight: 400;
+  color: #2B2B2B;
+}
+
+.bookPage__bookInfo__item + .bookPage__bookInfo__item {
+  margin-top: 11px;
+}
+
+.bookPage__bookInfo {
+  margin-top: 31px;
+}
+
+.bookPage__right {
+  position: relative
+}
+
+.bookPage__infoFooter {
+  position: absolute;
+  bottom: 0;
+}
+
+.bookPage__price {
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.bookPage__discription {
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #2b2b2b;
+}
+
+.booksPage__item {
+  position: relative;
+  padding: 32px;
+  display: flex;
+  background: #fff;
+  border-radius: 8px;
+  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
+}
+
+.booksPage__item + .booksPage__item {
+  margin-top: 25px;
+}
+
+.booksPage__left {
+  width: 120px;
+}
+
+.booksPage__bookImg {
+  width: 100%;
+}
+
+.booksPage {
+  margin-top: 50px;
+}
+
+.booksPage__title {
+  color: #2b2b2b;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.booksPage__right {
+  margin-left: 30px;
+}
+
+.booksPage__author {
+  margin-top: 21px;
+  color: #2b2b2b;
+}
+
+.bookPage__reviews__price {
+  color: #000;
+  position: absolute;
+  bottom: 31px;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.authorsList {
+  margin-top: 50px;
+}
+
+.author__item {
+  display: flex;
+}
+
+.author__item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.author__item__left {
+  width: 220px;
+}
+
+.author__item__authorImg {
+   width: 100%;
+}
+
+.author__item__right {
+  margin-left: 25px;
+}
+
+.author__item__name {
+  font-size: 32px;
+  color: #2b2b2b;
+  font-weight: 600;
+}
+
+.bookPage__bookInfo__item {
+  margin-top: 11px;
+}
+
+.bookPage__bookInfo__bookCounter {
+  margin-top: 27px;
+  color: #666;
+  font-weight: 16;
+}
+
+.author__item + .author__item {
+  margin-top: 15px;
+}
+
+.author {
+  margin-top: 32px;
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 8px;
+}
+
+.author__left__img {
+   width: 100%;
+}
+
+.author__left {
+  width: 300px;
+}
+
+.author__name {
+  color: #2b2b2b;
+}
+
+.author__mainInfoWrapper {
+  display: flex;
+}
+
+.author__right {
+  margin-left: 26px;
+}
+
+.bookPage__books__title {
+  margin-top: 55px;
+  font-size: 24px;
+}
+
+.bookPage__books__list__item {
+  margin-top: 12px;
+  width: 16.6%
+}
+
+.bookPage__books__list__item__photo {
+  width: 100%;
+}
+
+.bookPage__books__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bookPage__books__list__item + .bookPage__books__list__item {
+  margin-left: 28px;
 }
