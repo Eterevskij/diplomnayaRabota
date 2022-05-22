@@ -8,6 +8,8 @@ import star from '../img/Star.png';
 
 const Author = (props) => {
 
+    debugger
+
     const params = useParams();
     const { authors, books } = props;
     const authorId = +params.authorId;
@@ -64,7 +66,7 @@ const Author = (props) => {
 
 
                     return (
-                        <Link className="bookPage__books__list__item" to={`/books/${id}`}>
+                        <Link className="bookPage__books__list__item" to={`/book/${id}`}>
                                 <img className="bookPage__books__list__item__photo" src={photo} alt="" />
                                 <p className="bookPage__books__list__item__text">{title}</p>
                         </Link>

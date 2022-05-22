@@ -20,7 +20,7 @@ const Authors = (props) => {
                     const {id, name, photo, bookNum} = author;
 
                     return(
-                        <Link to={`/authors/${id}`} className="author__item">
+                        <Link to={`/author/${id}`} className="author__item">
 
                         <div className="author__item__left">
                             <img className='author__item__authorImg' src={photo} alt="" />

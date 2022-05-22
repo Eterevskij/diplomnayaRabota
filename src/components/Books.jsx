@@ -10,12 +10,10 @@ const Books = (props) => {
     const {books, popular} = props;
 
     let booksCopy = [...books];
-
-
-    debugger
     
 
     if(popular) {
+        debugger
         filteredBooks = booksCopy.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
     } else {
         filteredBooks = booksCopy;
@@ -31,7 +29,7 @@ const Books = (props) => {
                     const {id, title, author, price, rating, rewievNumber} = book;
 
                     return (
-                        <Link to={`/books/${id}`} className="booksPage__item">
+                        <Link to={`/book/${id}`} className="booksPage__item">
 
                             <div className="booksPage__left">
                                 <img className='booksPage__bookImg' src={book.photo} alt="" />

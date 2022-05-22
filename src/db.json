@@ -10,5 +10,9 @@
     {"id": 0, "name": "Лев Толстой", "birthYear": 1828, "deathYear": 1910, "photo": "https://regnum.ru/uploads/pictures/news/2016/02/25/regnum_picture_1456347857783771_normal.jpg", "bookNum": 2},
     {"id": 1, "name": "Джоан Роулинг", "birthYear": 1965, "deathYear": null, "photo": "https://yandex-images.clstorage.net/5XV01Vb83/37eb02U_dEy/yu1OGiJJlsvp52V3dVy_qufKPwkoCHUGMJhdBH-wt3vtP-B57ptM2H_zM-_APeGWYdloR1CfasCcEnWG0XpE4x98XRzl2lRLqeemNTOe_mglyf0ILQm1kCVenQY7cmAofH11NyBFUUTxLb8k3CNqUbXavweXmrqRRwg20wqgHPRMqgvVJZpbhu12pnT3FDJp8cHyzPjBaUHyQZ0G_G_g43Iv6_3uRBKNfWw3rBGgZdc_2fKLHEPzn4lGqJDCY1u0RmXHk6wRW4Tv9mWz-tc8ZjwEu0CxgaBGd4NezjYhp-d0IuE5bcdZSPBtMuZdaWDd_pz8Bd3KNx3CT2IWz-3ct4QsDdilW18GLP-lPbrec20_Qj7J9o9nRfjFEMv1LORusSfi-iuBmEm8KrLqkOJnkjBYOs0azT2cQoHsGYNokHHEo4dYo5vYwS21oH36UbygtUh4SjhGqYj3jtbIeiRh5LpjJXEkxFFFfaL9LNvr6xuzG7_M3ED234aE5RWMqtg6xmxH02VeU4HpcmG9_VyyrnDLPMGxzm5NvYmZCDXtIydwr6G0LEOTB7KtMWuX42_a_No1ThPPc5AEAqrexmBSPMnoxhKnGZsE7PHgOjsR9Cd_wzPFdcAgDrVCl8B_KCutuKdg-eTGlAL36zCmHOApXbnTPArQBD6WTcYimcMjkfHJaUtcalwcRqaxqvO0n3Uq8kpyxzEO5oH6Tl8HdeCjY7bnoPysjpjOd6r6JRcqqx41G_LMGMNz1Q1LLZpBrNP8RKDA0u9a3MvhNiF9M9367XwLNc03TysIvUJQBDLkJK477iB1Y0CTh3ZiNaIXYe2euB01xdLK8hiBDuBfgWTfNcOmw52ilBDCLv8jc7VXvqg9g30Js47kwnfEEMPzqC8vNm5vMeOO24L67bDiXi3pkj0dNojcA7AVwkXj1w-s3_OLLkAYr5ZUweExarG3VHdl9wy9ATZDo05zAxHLOk", "bookNum": 3 },
     {"id": 2, "name": "Стивен Кинг", "birthYear": 1947, "deathYear": null, "photo": "https://vgtimes.ru/uploads/posts/2021-06/thumbs/1622625441_15421.jpg", "bookNum": 1}
+], 
+"genres" : [
+    {"id": 0, "name": "Роман" },
+    {"id": 1, "name": "Ужасы"}
 ]
 }

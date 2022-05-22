@@ -4,6 +4,7 @@ import './App.css';
 import {Route, Link, Routes}  from "react-router-dom";
 
 import BookPage from './components/BookPage';
+import Genres from './components/Genres';
 import Books from './components/Books';
 import Authors from './components/Authors';
 import Author from './components/Author';
@@ -22,7 +23,7 @@ function App(props) {
           <ul className="menu">
             <li className="menu__item"><Link to="/books">Книги</Link></li>
             <li className="menu__item"><Link to="/authors">Авторы</Link></li>
-            <li className="menu__item"><Link to="/janres">Жанры</Link></li>
+            {/* <li className="menu__item"><Link to="/genres">Жанры</Link></li> */}
             <li className="menu__item"><Link to="/popular">Популярное</Link></li>
           </ul>
         </div>
@@ -33,10 +34,11 @@ function App(props) {
       <Routes>
           <Route path="/" element={<Books books={store.books} />} />
           <Route path="/books" element={<Books books={store.books} />} />
-          <Route path="/books/:bookId" element={<BookPage books={store.books} />} />
+          <Route path="/book/:bookId" element={<BookPage books={store.books} />} />
+          <Route path="/books/:geneId" element={<BookPage genre={store.genre} books={store.books} />} />
           <Route path="/authors" element={<Authors  authors={store.authors} books={store.books} />} />
-          <Route path="/authors/:authorId" element={<Author authors={store.authors} books={store.books} />} />
-          <Route path="/janres" element={<Books  books={store.books} />} />
+          <Route path="/author/:authorId" element={<Author authors={store.authors} books={store.books} />} />
+          <Route path="/genres" element={<Genres genres={store.genres} />} />
           <Route path="/popular" element={<Books popular books={store.books} />} />
 
         </Routes>
