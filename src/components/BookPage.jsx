@@ -118,6 +118,9 @@ const BookPage = (props) => {
 
                     <button className="bookPage_comments__showMoreBtn">Показать еще</button>
 
+                    
+
+
                 </div>
             </div>
         </div>
