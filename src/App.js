@@ -35,7 +35,7 @@ function App(props) {
           <Route path="/" element={<Books books={store.books} />} />
           <Route path="/books" element={<Books books={store.books} />} />
           <Route path="/book/:bookId" element={<BookPage books={store.books} />} />
-          <Route path="/books/:geneId" element={<BookPage genre={store.genre} books={store.books} />} />
+          <Route path="/genre/:geneId" element={<BookPage genre={store.genre} books={store.books} />} />
           <Route path="/authors" element={<Authors  authors={store.authors} books={store.books} />} />
           <Route path="/author/:authorId" element={<Author authors={store.authors} books={store.books} />} />
           <Route path="/genres" element={<Genres genres={store.genres} />} />

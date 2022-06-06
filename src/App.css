@@ -369,12 +369,98 @@ body {
   padding: 10px 55px;
   background: transparent;
   font-weight: 600;
-  width: fit-content;
+  width: 100%;
   cursor: pointer;
 }
 
 .bookPage_comments_commentWrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.preloader {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.writeComment {
+  margin-top: 70px;
+}
+
+.writeComment__name,
+.writeComment__text {
+  padding: 10px 17px;
+  border-radius: 8px;
+  border: 1px solid #2B2B2B;
+  display: inline-block;
+}
+
+.writeComment__name,
+.writeComment__name::placeholder,
+.writeComment__text,
+.writeComment__text::placeholder {
+  font-size: 16px;
+  color: #2B2B2B;
+}
+
+.writeComment__name{
+  margin-top: 23px;
+}
+
+.writeComment__text {
+  width: 100%;
+  margin-top: 13px;
+  resize: none;
+}
+
+.writeComment__button {
+  margin-top: 22px;
+  padding: 10px 32px;
+  border: 1px solid #000000;
+  background: transparent;
+  border-radius: 8px;
+}
+
+.writeComment__star {
+  cursor: pointer;
+}
+
+.writeComment__star path {
+  fill: #666666;
+}
+
+.writeComment__star ~ .writeComment__star {
+  padding-right: 9px;
+}
+
+.writeComment__star {
+  box-sizing: content-box;
+  width: 21px;
+  height: 21px;
+}
+
+.writeComment__star path {
+  transition: fill 0.1s;
+}
+
+.writeComment__star:hover path,
+.writeComment__star:hover ~ .writeComment__star path,
+.writeComment__star.active path,
+.writeComment__star.active ~ .writeComment__star path {
+  fill: #FFA800;
+}
+
+.writeComment__stars {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.writeComment__star__wrapper {
+  display: flex;
+}
+
+.writeComment__button {
+  cursor: pointer;
 }
