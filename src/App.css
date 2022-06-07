@@ -464,3 +464,11 @@ body {
 .writeComment__button {
   cursor: pointer;
 }
+
+.bookPage_description {
+  height: 370px;
+}
+
+.bookPage__bookImg__autohor {
+  height: 205px;
+}

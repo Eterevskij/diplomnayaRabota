@@ -6,6 +6,18 @@ export const getBook = async (id) => {
         .then(response => response.json())
 }
 
+export const getSortBook = async (sortField) => {
+    debugger
+    return fetch(`${baseUrl}/book/?ordering=-${sortField}`)
+        .then(response => response.json())
+}
+
+export const getAuthor = async (id) => {
+    debugger
+    return fetch(`${baseUrl}/author/${id ? id : ''}`)
+        .then(response => response.json())
+}
+
 export const sendComment = async (data) => {
     debugger
     return fetch(`${baseUrl}/comment/`, {

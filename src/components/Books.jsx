@@ -1,19 +1,23 @@
 import React, { useEffect } from 'react';
 
-import book from '../img/Book.jpg';
 import star from '../img/Star.png';
 
-import { Link } from "react-router-dom";
-import bookState from '../store/BookState';
+import { useParams, Link } from "react-router-dom";
+import bookState from '../store/BooksState';
 import { observer } from 'mobx-react-lite';
 import Preloader from '../Preloader.gif';
 
-const Books =observer((props) => {
+const Books = observer((props) => {
 
+    const {popular} = props;
 
     useEffect(() => {
-        bookState.loadBooks()
-    }, []);
+        if(popular) {
+            bookState.sortByRating()
+        } else {
+            bookState.loadBooks()
+        }
+    }, [props.popular]);
 
 
     return (<>
@@ -33,7 +37,11 @@ const Books =observer((props) => {
                                 <Link to={`/book/${id}`} className="booksPage__item" key={id}>
 
                                     <div className="booksPage__left">
-                                        <img className='booksPage__bookImg' src={book.photo} alt="" />
+                                        {book.photo ?
+                                            <img className='booksPage__bookImg' src={book.photo} alt="" />
+                                            :
+                                            <img src="https://tokyo-doctors.com/images_2016/noimage_tate.jpg" alt="" className="booksPage__bookImg" />
+                                        }
                                     </div>
 
                                     <div className="booksPage__right">
@@ -42,7 +50,7 @@ const Books =observer((props) => {
 
                                         <span className="bookPage__reviews">
                                             <img src={star} className="bookPage__reviews__star" />
-                                            <p className="bookPage__reviews__num">{avg}</p>
+                                            <p className="bookPage__reviews__num">{avg.toFixed(1)}</p>
 
                                             <p className="bookPage__reviews__reviewCounter">{comment.length} отзывов</p>
 
@@ -62,7 +70,7 @@ const Books =observer((props) => {
 
                 </div>
         }
-        </>
+    </>
     )
 })
 

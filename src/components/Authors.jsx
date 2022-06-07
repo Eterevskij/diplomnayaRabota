@@ -1,23 +1,32 @@
-import React from 'react';
-
+import React, {useEffect} from 'react';
+import authorsState from '../store/AuthorsState';
+import { observer } from 'mobx-react-lite';
+import Preloader from '../Preloader.gif';
 import { Link }  from "react-router-dom";
 
 
 import author from '../img/Author.jpg';
 
-const Authors = (props) => {
+const Authors = observer((props) => {
 
     const {authors} = props;
 
     debugger
+    useEffect(() => {
+        authorsState.loadAuthorsInfo()
+    }, []);
 
     return (
         <div className="authorsList">
 
-            {
-                authors.map(author => {
+        {authorsState.isFetching ?
+            <img className='preloader' src={Preloader} alt="" />
+            :
 
-                    const {id, name, photo, bookNum} = author;
+
+                authorsState.authors.map(author => {
+
+                    const {id, name, photo, book_list} = author;
 
                     return(
                         <Link to={`/author/${id}`} className="author__item">
@@ -31,7 +40,7 @@ const Authors = (props) => {
                             <p className="author__item__name">{name}</p>
         
         
-                            <p className="bookPage__bookInfo__bookCounter">{bookNum} книг в продаже</p>
+                            <p className="bookPage__bookInfo__bookCounter">{book_list.length} книг в продаже</p>
                         </div>
                     </Link>
                     )
@@ -42,6 +51,6 @@ const Authors = (props) => {
 
         </div>
     )
-}
+})
 
 export default Authors; 

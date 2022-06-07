@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from "react-router-dom";
-import authorState from '../store/AuthorState';
+import authorState from '../store/AuthorPageState';
 import { observer } from 'mobx-react-lite';
 import Preloader from '../Preloader.gif';
 
@@ -14,7 +14,7 @@ const Author = observer((props) => {
     let name, birthyear, death;
 
     useEffect(() => {
-        authorState.loadAuthorInfo()
+        authorState.loadAuthorInfo(authorId)
     }, []);
 
 
@@ -34,7 +34,7 @@ const Author = observer((props) => {
                 <div className="author__mainInfoWrapper">
 
                     <div className="author__left">
-                        <img src={'photo'} alt="" className="author__left__img" />
+                        <img src={authorState.author.photo} alt="" className="author__left__img" />
                     </div>
 
                     <div className="author__right">
@@ -42,7 +42,7 @@ const Author = observer((props) => {
 
 
                         <ul className="bookPage__bookInfo">
-                            <li className="bookPage__bookInfo__item"><span className="name">Книг в продаже : {authorState.author.bookNum}</span> <span className="value"></span></li>
+                            <li className="bookPage__bookInfo__item"><span className="name">Книг в продаже : {authorState.author.book_list.length}</span> <span className="value"></span></li>
                             <li className="bookPage__bookInfo__item"><span className="name">Год рождения : {authorState.author.birthyear.slice(0, 4)}</span> <span className="value"></span></li>
 
                             {authorState.author.death &&
@@ -60,19 +60,23 @@ const Author = observer((props) => {
                 <div className="bookPage__books__title">Книги</div>
 
                 <div className="bookPage__books__list">
-                    {/* 
-                {authorsBooks.map(book => {
 
-                    const { id, photo, title } = book;
+                    {authorState.author.book_list.map(book => {
+
+                        const { id, photo, name } = book;
 
 
-                    return (
-                        <Link className="bookPage__books__list__item" to={`/book/${id}`}>
-                            <img className="bookPage__books__list__item__photo" src={photo} alt="" />
-                            <p className="bookPage__books__list__item__text">{title}</p>
-                        </Link>
-                    )
-                })} */}
+                        return (
+                            <Link className="bookPage__books__list__item" to={`/book/${id}`}>
+                                {photo ?
+                                    <img className='bookPage__bookImg__autohor' src={photo} alt="" />
+                                    :
+                                    <img src="https://tokyo-doctors.com/images_2016/noimage_tate.jpg" alt="" className="bookPage__bookImg__autohor" />
+                                }
+                                <p className="bookPage__books__list__item__text">{name}</p>
+                            </Link>
+                        )
+                    })}
 
 
 

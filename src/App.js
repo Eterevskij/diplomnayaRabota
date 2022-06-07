@@ -7,7 +7,7 @@ import BookPage from './components/BookPage';
 import Genres from './components/Genres';
 import Books from './components/Books';
 import Authors from './components/Authors';
-import Author from './components/Author';
+import Author from './components/AuthorPage';
 
 
 

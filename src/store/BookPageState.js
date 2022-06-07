@@ -2,10 +2,20 @@ import {
     makeAutoObservable,
     runInAction
 } from "mobx";
-import {getBook, sendComment} from '../api';
+import {
+    getBook,
+    sendComment
+} from '../api';
 
-class Author {
-    books = [];
+class BookPageState {
+
+    constructor() {
+        makeAutoObservable(this)
+    }
+
+    isFetching = true;
+
+    books = {};
 
     userComment = {
         name: null,
@@ -13,29 +23,14 @@ class Author {
         rating: null
     };
 
-    isFetching = true;
-
-    constructor() {
-        makeAutoObservable(this)
-    }
-
-    loadBookInfo = async (id = 1) => {
-        let books;
+    loadBookInfo = async (id) => {
+        let book;
         runInAction(() => this.isFetching = true);
-        books = await getBook(id);
+        book = await getBook(id);
         runInAction(() => {
-            this.books = books;
+            debugger
             this.isFetching = false;
-        });
-    }
-
-    loadBooks = async () => {
-        let books;
-        runInAction(() => this.isFetching = true);
-        books = await getBook();
-        runInAction(() => {
-            this.books = books;
-            this.isFetching = false;
+            this.books = book;
         });
     }
 
@@ -63,4 +58,4 @@ class Author {
 
 }
 
-export default new Author();
+export default new BookPageState();

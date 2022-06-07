@@ -13,7 +13,7 @@ class Author {
         makeAutoObservable(this)
     }
 
-    loadAuthorInfo = async (id = 1) => {
+    loadAuthorInfo = async (id) => {
         this.isFetching = true;
         fetch(`${baseUrl}/${id}/`)
             .then(response => response.json())
